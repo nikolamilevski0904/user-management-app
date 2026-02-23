@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+:root {
+  --bg: #0b1220;        /* deep navy */
+  --panel: #0f1b2d;     /* navy card */
+  --panel-2: #12233b;
+  --border: #203553;
+  --text: #e6edf7;
+  --muted: #9fb0c7;
+
+  --primary: #2f6bff;   /* navy-blue accent */
+  --primary-2: #1d4ed8;
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+body {
+  background: radial-gradient(900px 500px at 10% 0%, rgba(47, 107, 255, 0.18), transparent 60%),
+              radial-gradient(900px 500px at 90% 0%, rgba(29, 78, 216, 0.14), transparent 60%),
+              var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* App wrapper */
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 26px 18px 48px;
+}
+
+/* Top nav */
+.topnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 14px;
+  border: 1px solid var(--border);
+  background: rgba(15, 27, 45, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  margin-bottom: 18px;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Page header */
+.pageTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 10px 0 14px;
+}
+
+/* Panels */
+.panel {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(18, 35, 59, 0.75), rgba(15, 27, 45, 0.75));
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+}
+
+@media (max-width: 720px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(11, 18, 32, 0.55);
+  color: var(--text);
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.input::placeholder {
+  color: rgba(159, 176, 199, 0.8);
+}
+
+.input:focus {
+  border-color: rgba(47, 107, 255, 0.9);
+  box-shadow: 0 0 0 3px rgba(47, 107, 255, 0.18);
+}
+
+/* Buttons */
+.btn {
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(47, 107, 255, 0.55);
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: white;
+  font-weight: 650;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(47, 107, 255, 0.28);
+  filter: brightness(1.05);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btnSecondary {
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(11, 18, 32, 0.35);
+  color: var(--text);
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.btnSecondary:hover {
+  border-color: rgba(47, 107, 255, 0.55);
+  background: rgba(47, 107, 255, 0.12);
+}
+
+/* Sort row */
+.sortRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* List */
+.list {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.user-card {
+  border: 1px solid var(--border);
+  background: rgba(15, 27, 45, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 14px 14px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(47, 107, 255, 0.45);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.34);
+}
+
+.userLink {
+  font-weight: 700;
+  color: #8bb0ff;
+}
+
+.muted {
+  color: var(--muted);
+  margin-top: 4px;
+}
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 720px) {
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detailItem {
+  border: 1px solid var(--border);
+  background: rgba(11, 18, 32, 0.35);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.detailLabel {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.detailValue {
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.35;
+}
